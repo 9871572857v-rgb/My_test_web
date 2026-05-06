@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <title>daddy likes harshit</title>
+    <style>
+        /* This is the "Dimmer" - it blurs the background */
+        #modalOverlay {
+            display: none; 
+            position: fixed; 
+            top: 0; left: 0; 
+            width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.5); 
+            z-index: 999;
+        }
+
+        /* This is the actual Box */
+        #customAlert {
+            display: none;
+            position: fixed;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+            z-index: 1000;
+            font-family: sans-serif;
+        }
+
+        #customAlert button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>harshit is a good boy. This is an example of a button and an image.</h2>
+    
+    <button id="harshit_btn">harshit button</button>
+    
+    <img src="nice_img.jpeg" style="max-width: 100%; height: auto; display: block; margin-top: 20px;">
+
+    <div id="modalOverlay"></div>
+    <div id="customAlert">
+        <p style="font-size: 18px; font-weight: bold;">Message:</p>
+        <p>Daddy likes harshit, he is a good boy</p>
+        <button id="closeBtn">Close</button>
+    </div>
+
+    <script>
+        // 1. Grab all the elements
+        const openBtn = document.getElementById("harshit_btn");
+        const closeBtn = document.getElementById("closeBtn");
+        const modal = document.getElementById("customAlert");
+        const overlay = document.getElementById("modalOverlay");
+
+        // 2. Function to show the alert
+        openBtn.addEventListener("click", function() {
+            modal.style.display = "block";
+            overlay.style.display = "block";
+        });
+
+        // 3. Function to hide the alert
+        closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+            overlay.style.display = "none";
+        });
+    </script>
+
+</body>
+</html>
